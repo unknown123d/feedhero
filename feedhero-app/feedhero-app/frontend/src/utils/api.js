@@ -1,4 +1,4 @@
-const BASE = '/api'
+const BASE = 'https://feedhero-production.up.railway.app/api'
 
 export async function uploadCSV(file) {
   const form = new FormData()
@@ -13,9 +13,9 @@ export async function uploadCSV(file) {
 
 export async function startOptimization(filePath, fileName) {
   const res = await fetch(`${BASE}/optimize/start`, {
-    method:  'POST',
+    method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body:    JSON.stringify({ filePath, fileName }),
+    body: JSON.stringify({ filePath, fileName }),
   })
   if (!res.ok) {
     const err = await res.json().catch(() => ({ error: 'Could not start' }))

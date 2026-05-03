@@ -8,7 +8,7 @@ import { jobsRouter }     from './routes/jobs.js'
 const app  = express()
 const PORT = process.env.PORT || 4000
 
-app.use(cors({ origin: ['http://localhost:5173', 'http://localhost:3000'] }))
+app.use(cors())
 app.use(express.json())
 
 app.use('/api/upload',   uploadRouter)
@@ -20,5 +20,5 @@ app.get('/api/health', (_req, res) =>
 )
 
 app.listen(PORT, () =>
-  console.log(`\n🚀 FeedHero backend → http://localhost:${PORT}\n`)
+  console.log(`FeedHero backend running on port ${PORT}`)
 )

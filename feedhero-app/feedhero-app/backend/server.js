@@ -8,7 +8,9 @@ import { jobsRouter }     from './routes/jobs.js'
 const app  = express()
 const PORT = process.env.PORT || 4000
 
-app.use(cors())
+app.use(cors({
+  origin: '*'
+}))
 app.use(express.json())
 
 app.use('/api/upload',   uploadRouter)

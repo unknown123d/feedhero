@@ -16,7 +16,7 @@ app.use('/api/optimize', optimizeRouter)
 app.use('/api/jobs',     jobsRouter)
 
 app.get('/api/health', (_req, res) =>
-  res.json({ status: 'ok', ts: new Date().toISOString() })
+ res.json({ status: 'ok', version: '2.0.0', ts: new Date().toISOString() })
 )
 
 app.listen(PORT, () =>

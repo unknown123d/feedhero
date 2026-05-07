@@ -8,9 +8,7 @@ import { jobsRouter }     from './routes/jobs.js'
 const app  = express()
 const PORT = process.env.PORT || 4000
 
-app.use(cors({
-  origin: '*'
-}))
+app.use(cors({ origin: '*' }))
 app.use(express.json())
 
 app.use('/api/upload',   uploadRouter)
@@ -18,7 +16,7 @@ app.use('/api/optimize', optimizeRouter)
 app.use('/api/jobs',     jobsRouter)
 
 app.get('/api/health', (_req, res) =>
- res.json({ status: 'ok', version: '2.0.0', ts: new Date().toISOString() })
+  res.json({ status: 'ok', version: '3.0.0', ts: new Date().toISOString() })
 )
 
 app.listen(PORT, () =>
